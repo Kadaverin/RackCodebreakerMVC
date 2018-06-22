@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/Kadaverin/codebreaker.git
+  revision: b275a36fa11f39a6d95fa64eb94be07cb8bc8f0c
+  branch: feature/game
+  specs:
+    codebreaker (0.1.0)
+
 PATH
   remote: .
   specs:
@@ -8,6 +15,7 @@ GEM
   specs:
     diff-lcs (1.3)
     puma (3.11.4)
+    rack (2.0.5)
     rake (10.5.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
@@ -33,7 +41,9 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
+  codebreaker!
   puma
+  rack
   rackgame!
   rake (~> 10.0)
   rspec (~> 3.0)

@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+  body
+    center
+     form action = 'guess' method = 'post'
+      input  name="user_guess" type="text" autofocus = 'true'
+      input  type="submit" name="submit" value="check"
+
+     p 
+       |
+        attempts left: #{@attempts_left} <br/>
+        hints left : #{@hints_left}
+
+     - if @hint
+      p your hint: #{@hint}
+     - else
+      p "Click 'hint' to know one random number from code!"  
+
+     form action = 'hint'
+       input type = 'submit'  value = 'hint'     
+
+     table 
+        tr 
+          td = 'Your guess'
+          td = "Codemaker's answer"
+     table
+      - @game_history.reverse_each do |guess , answer|
+        tr 
+          td = guess
+          td = answer

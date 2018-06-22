@@ -2,13 +2,20 @@ require 'slim'
 require_relative 'rackgame/version'
 require_relative 'rackgame/router'
 require_relative 'rackgame/controller'
+require 'codebreaker'
 
-Dir[File.join(File.dirname(__FILE__), '..', 'app', '**', '*.rb')].each do |file|
+Dir[File.join(__dir__, '..', 'app', '**', '*.rb')].each do |file|
   require file
 end
 
 ROUTES = {
-  '/' => 'home#index'
+  '/' => 'home#index',
+  '/start' => 'game#index',
+  '/game' => 'game#game',
+  '/guess' => 'game#guess',
+  '/hint' => 'game#hint',
+  '/save_score' => 'score#ask_for_save',
+  '/score_list' => 'score#score_list'
 }.freeze
 
 module Rackgame

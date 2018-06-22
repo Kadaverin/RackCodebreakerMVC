@@ -2,20 +2,19 @@ module Rackgame
   # //
   class Controller
     attr_reader :name, :action
-    attr_accessor :response, :request
+    attr_accessor :response, :request, :redirected
 
     def initialize(name: nil, action: nil, request: nil)
       @name = name
       @action = action
       @request = request
-      @redirect = false
+      @redirected = false
     end
 
     def call
-      @redirect = false
       send(action)
 
-      unless @redirect
+      unless redirected
         self.response = Rack::Response.new do |response|
           response.body = [template.render(self)]
           # for the future : make the status code dependent on the request method
@@ -38,7 +37,7 @@ module Rackgame
     end
 
     def redirect(path)
-      @redirect = true
+      self.redirected = true
       self.response = Rack::Response.new { |r| r.redirect(path) }
     end
 
