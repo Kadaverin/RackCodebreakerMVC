@@ -2,21 +2,26 @@ require 'slim'
 require_relative 'rackgame/version'
 require_relative 'rackgame/router'
 require_relative 'rackgame/controller'
+require 'yaml'
 require 'codebreaker'
 
 Dir[File.join(__dir__, '..', 'app', '**', '*.rb')].each do |file|
   require file
 end
 
-ROUTES = {
-  '/' => 'home#index',
-  '/start' => 'game#index',
-  '/game' => 'game#game',
-  '/guess' => 'game#guess',
-  '/hint' => 'game#hint',
-  '/save_score' => 'score#ask_for_save',
-  '/score_list' => 'score#score_list'
-}.freeze
+ROUTES = YAML.safe_load(
+  File.read(File.join(__dir__, '..', 'app', 'routes', 'web.yml'))
+)
+
+# ROUTES = {
+#   '/' => 'home#index',
+#   '/start' => 'game#index',
+#   '/game' => 'game#game',
+#   '/guess' => 'game#guess',
+#   '/hint' => 'game#hint',
+#   '/save_score' => 'score#ask_for_save',
+#   '/score_list' => 'score#score_list'
+# }.freeze
 
 module Rackgame
   # //

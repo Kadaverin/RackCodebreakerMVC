@@ -10,6 +10,6 @@ class ScoreController < Rackgame::Controller
   end
 
   def score_list
-    #print all history
+    # print all history
   end
 end

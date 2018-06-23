@@ -12,7 +12,7 @@ module Rackgame
     end
 
     def call
-      send(action)
+      public_send(action)
 
       unless redirected
         self.response = Rack::Response.new do |response|
