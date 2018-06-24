@@ -1,31 +1,43 @@
 doctype html
 html
   head
-  body
-    center
-     form action = 'guess' method = 'post'
-      input  name="user_guess" type="text" autofocus = 'true'
-      input  type="submit" name="submit" value="check"
+   link href ='/css/bootstrap.min.css' rel='stylesheet' type ='text/css'
+  body 
+    .container.mt-5.border-left.border-right.w-50
+     .text-center
+      .row.justify-content-center.mt-4
+        .col-3
+           .alert.alert-warning   attempts left: #{@attempts_left} <br/>
+        .col-4
+           - if @hint then message = "your hint: #{@hint}"
+           - else message = "Click 'hint'"  
+           .alert.alert-warning = message 
+        .col-3
+           .alert.alert-warning   hints left : #{@hints_left}
 
-     p 
-       |
-        attempts left: #{@attempts_left} <br/>
-        hints left : #{@hints_left}
+      .row.justify-content-center  
+        .col-4.mt-2 
+           a class="btn  btn-outline-success btn-block" href="/hint" role="button" hint
+      .row.justify-content-center
+        .col-4.mt-4
+          form class = 'form' action = 'guess' method = 'post'
+           .form-group.has-danger
+             .input-group
+                input { 
+                      class="inp form-control form-control-sm" name="user_guess" type="text" 
+                      autofocus = 'true' placeholder = '****'  maxlength = '4' id="inputDanger" required= true
+                     }
+                input  class ="btn btn-dark btn-sm" type="submit" name="submit" value="check"
 
-     - if @hint
-      p your hint: #{@hint}
-     - else
-      p "Click 'hint' to know one random number from code!"  
-
-     form action = 'hint'
-       input type = 'submit'  value = 'hint'     
-
-     table 
-        tr 
-          td = 'Your guess'
-          td = "Codemaker's answer"
-     table
-      - @game_history.reverse_each do |guess , answer|
-        tr 
-          td = guess
-          td = answer
+      .row.justify-content-center  
+          .col-4.mt-5
+            table class = 'table'
+              thead
+                tr 
+                  th = 'Guesses'
+                  th = 'Answers'
+              tbody
+              - @game_history.reverse_each do |guess , answer|
+                tr 
+                  td = guess
+                  td = answer

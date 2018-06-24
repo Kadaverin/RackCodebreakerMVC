@@ -1,7 +1,7 @@
-require 'slim'
 require_relative 'rackgame/version'
 require_relative 'rackgame/router'
 require_relative 'rackgame/controller'
+require 'slim'
 require 'yaml'
 require 'codebreaker'
 

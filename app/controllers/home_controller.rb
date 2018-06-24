@@ -1,7 +1,7 @@
 # //
 class HomeController < Rackgame::Controller
   def index
-    # @attempts_amount = Codecbreacker::ATTEMPTS_AMOUNT
-    # @hints_amount = Codecbreacker::HINTS_AMOUNT
+    @attempts_amount = Codebreaker::ATTEMPTS_AMOUNT
+    @hints_amount = Codebreaker::HINTS_AMOUNT
   end
 end
