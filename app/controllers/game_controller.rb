@@ -7,11 +7,11 @@ class GameController < Rackgame::Controller
   end
 
   def game
+    @attempts_left = session_game.attempts_left
+    @hints_left = session_game.hints_left
     @game_history = session_game.history
-    @attempts_left = session_game.attempts
-    @hints_left = session_game.hints
     @hint = request.session['hint']
-    redirect('/save_score') if game_over
+    redirect('/ask_for_save_score') if game_over
   end
 
   def hint
@@ -28,6 +28,7 @@ class GameController < Rackgame::Controller
     request.session['game']
   end
 
+  # вынести в гем кодбрейкера, логика явно не для контроллера
   def game_over
     session_game.won? || @attempts_left.zero?
   end

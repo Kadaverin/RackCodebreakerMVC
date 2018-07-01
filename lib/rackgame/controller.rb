@@ -17,7 +17,6 @@ module Rackgame
       unless redirected
         self.response = Rack::Response.new do |response|
           response.body = [template.render(self)]
-          # for the future : make the status code dependent on the request method
           response.status = 200
           response.set_header('Content-Type', 'text/html')
         end

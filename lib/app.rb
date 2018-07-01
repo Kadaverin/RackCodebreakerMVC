@@ -13,16 +13,6 @@ ROUTES = YAML.safe_load(
   File.read(File.join(__dir__, '..', 'app', 'routes', 'web.yml'))
 )
 
-# ROUTES = {
-#   '/' => 'home#index',
-#   '/start' => 'game#index',
-#   '/game' => 'game#game',
-#   '/guess' => 'game#guess',
-#   '/hint' => 'game#hint',
-#   '/save_score' => 'score#ask_for_save',
-#   '/score_list' => 'score#score_list'
-# }.freeze
-
 module Rackgame
   # //
   class App

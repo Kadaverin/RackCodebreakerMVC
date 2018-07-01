@@ -21,7 +21,7 @@ module Rackgame
 
     private def controller(route_string, request)
       name, action = route_string.split('#')
-      ctlr_class = Object.const_get("#{name.capitalize}Controller", Class.new)
+      ctlr_class = Object.const_get("#{name.capitalize}Controller")
       ctlr_class.new(name: name, action: action, request: request)
     end
 
