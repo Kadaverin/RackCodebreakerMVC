@@ -22,7 +22,7 @@ html
               - @score_list.reverse_each do |score_hash|
                 tr 
                   td = score_hash[:user_name]
-                  td = "#{score_hash[:won] ? 'won' : 'lost'}"
+                  td = "#{score_hash[:status] ? 'won' : 'lost'}"
                   td = score_hash[:used_attempts]
                   td = score_hash[:used_hints]
 

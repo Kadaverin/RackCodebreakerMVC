@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Kadaverin/codebreaker.git
-  revision: b323a73c08e07024de8a3cde996e4ac6fafa9a0b
+  revision: 0c7129e7e59b675979db4770418088e84819c617
   branch: feature/game
   specs:
-    codebreaker (0.3.1)
+    codebreaker (0.3.2)
 
 PATH
   remote: .

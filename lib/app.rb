@@ -18,7 +18,7 @@ module Rackgame
   class App
     attr_reader :router
     def initialize
-      @router = Router.new(ROUTES)
+      @router = Rackgame::Router.new(ROUTES)
     end
 
     def call(env)
