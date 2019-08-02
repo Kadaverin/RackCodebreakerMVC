@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+   link href ='/css/bootstrap.min.css' rel='stylesheet' type ='text/css'
+   link href = '/css/custom.css'  rel='stylesheet' type ='text/css'
+  body 
+    .container.text-center.w-50.mt-5.border-left.border-right
+     
+      .row.justify-content-center
+        .col-11.mt-4
+         - if @won
+          .alert.alert-success Congratulations! You are true codebreaker. 
+         - else 
+          .alert.alert-warning Oops! It looks like you lost this game. Try again!
+        .col-11
+          .alert.alert-success If you wanna save your game statistic in score history, just type your name and click 'save'
+
+        .col-6.mt-4.mb-2
+          form class='form' action='/save_score' method='post' onsubmit='return validateUserNameInput()'
+            .input-group
+              input {
+                     name="user_name" type="text" autofocus = 'true' placeholder = 'your name' 
+                     class = "inp form-control form-control-sm" id='user-name-input'
+                    } 
+              input  type="submit"  value="save" class="btn btn-outline-dark btn-sm" 
+              .invalid-feedback
+                   |  name must contain only letters or numbers, at least one
+
+      hr class="my-4 shadow"
+
+      .row.justify-content-center.mt-4
+        .col-3
+          a class="btn btn-dark btn-block " href="/start" role="button" restart
+
+      hr class="my-4 shadow"
+ 
+  script src= '/js/validation.js' type='text/javascript'
+ 
+    
+ 

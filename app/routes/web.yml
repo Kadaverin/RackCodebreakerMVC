@@ -1,0 +1,10 @@
+
+  '/' : 'home#index'
+  '/start' : 'game#index'
+  '/game' : 'game#game'
+  '/guess' : 'game#guess'
+  '/hint' : 'game#hint'
+  '/ask_for_save_score' : 'score#ask_for_save'
+  '/save_score' : 'score#save'
+  '/score_list' : 'score#score_list'
+  
