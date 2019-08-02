@@ -1,0 +1,53 @@
+GIT
+  remote: https://github.com/Kadaverin/codebreaker.git
+  revision: 0c7129e7e59b675979db4770418088e84819c617
+  branch: feature/game
+  specs:
+    codebreaker (0.3.2)
+
+PATH
+  remote: .
+  specs:
+    rackgame (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    diff-lcs (1.3)
+    puma (3.11.4)
+    rack (2.0.5)
+    rake (10.5.0)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+    rspec-core (3.7.1)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.1)
+    slim (3.0.9)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 1.3.3, < 2.1)
+    temple (0.8.0)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  codebreaker!
+  puma
+  rack
+  rackgame!
+  rake (~> 10.0)
+  rspec (~> 3.0)
+  slim
+
+BUNDLED WITH
+   1.16.1
